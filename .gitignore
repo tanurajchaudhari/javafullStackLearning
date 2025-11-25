@@ -1,0 +1,46 @@
+# Eclipse metadata and settings
+.metadata/
+.project
+.classpath
+.settings/
+
+# Build output
+**/target/
+**/bin/
+**/out/
+
+# IntelliJ config (if you also use IntelliJ)
+.idea/
+*.iml
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+dependency-reduced-pom.xml
+
+# Gradle
+.gradle/
+build/
+
+# Logs and temp
+*.log
+*.tmp
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Sensitive files / credentials
+*.keystore
+*.jks
+.env
+application-*.yml
+application-*.properties
+
+# Node (if any frontend inside project)
+node_modules/
+
+# Misc
+*.class
+`
