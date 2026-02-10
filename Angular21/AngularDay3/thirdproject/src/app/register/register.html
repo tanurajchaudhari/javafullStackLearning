@@ -1,0 +1,69 @@
+<form #data="ngForm" (ngSubmit)="onSubmit(data.value)">
+
+
+    <label for="">Enter Name : </label>
+    <input type="text" name="name" ngModel  placeholder="Enter your name">
+    <br><br>
+
+     <label for="">Enter Email : </label>
+    <input type="email" name="email" ngModel placeholder="Enter your email">
+    <br><br>
+
+     <label for="">Enter Password : </label>
+    <input type="password" name="password" ngModel  placeholder="Enter your password">
+    <br><br>
+
+     <label for="">Enter Mobile number :  </label>
+    <input type="number" name="mobileNo" ngModel    placeholder="Enter your mobile number">
+    <br><br>
+
+    <label for="">Gender :  </label>
+    <input type="radio" name="gender" value="Male"  ngModel />Male
+     <input type="radio" name="gender" value="Female"  ngModel />Female
+     <br><br>
+
+     <label for="">Choose City : </label>
+
+     <select name="city" id="" ngModel>
+
+        <option value="Pune">Pune</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="bangluru">bangluru</option>
+     </select>
+  <br><br>
+
+  <input type="submit" value="register">
+
+</form>
+
+<hr>
+
+<h1>user Data</h1>
+<!-- <p>{{userData.name}}</p>
+<p>{{userData.email}}</p>
+<p>{{userData.password}}</p>
+<p>{{userData.mobileNo}}</p>
+<p>{{userData.gender}}</p>
+<p>{{userData.city}}</p> -->
+
+<table>
+
+    <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>mobile number</th>
+        <th>password</th>
+        <th>gender</th>
+        <th>city</th>
+    </tr>
+    <tr>
+        <td>{{userData.name}}</td>
+        <td>{{userData.email}}</td>
+        <td>{{userData.mobileNo}}</td> 
+        <td>{{userData.password}}</td>
+        <td>{{userData.gender}}</td>    
+        <td>{{userData.city}}</td>  
+
+
+    </tr>
+</table>

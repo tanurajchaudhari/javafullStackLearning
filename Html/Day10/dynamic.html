@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function createButton(){
+           var btnRef= document.createElement("button");
+           var h2Ref=document.getElementById("h2");
+           var h2Reff= document.createElement("h2")
+           h2Reff.innerText="H2 button is created using js..."
+           h2Ref.innerText="html is created using javascript !!!!!!!!!!!!";
+           h2Ref.style.color="green";
+           btnRef.innerText="Dynamic Button";
+           btnRef.style.color="white";
+           btnRef.style.backgroundColor="darkred";
+           btnRef.style.border="none";
+           btnRef.style.padding="10px 20px";
+           btnRef.style.borderRadius="5px";
+           btnRef.style.margin="10px";
+
+           
+           var bodyRef= document.getElementById("body");
+           bodyRef.appendChild(btnRef);
+           bodyRef.appendChild(h2Reff);
+        }
+    </script>
+</head>
+<body id="body">
+    <h2 id="h2">HTML DOM</h2>
+    <button>HTML Button</button>
+    <button onclick="createButton()">Create DOM Button</button>
+</body>
+</html>

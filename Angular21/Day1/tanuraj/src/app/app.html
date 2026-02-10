@@ -1,0 +1,67 @@
+<h2>hwello no i am learning the angular  framework </h2>
+
+
+
+<h1>{{name}}</h1>
+
+@if(admin=="Aadiandava"){
+  @if(isloggedIn){
+    <h3>welcome dear {{admin}}</h3>
+  }
+  @else{
+    <h3>Please logged in ?</h3>
+  }
+}@else{
+  <h3>You are normal user</h3>
+}
+
+
+<!-- @if(age>18){
+  <h3>You are eligible</h3>
+}
+@else{
+  <h3>you are minor</h3>
+} -->
+
+<!-- <ul>
+  <li>{{user.id}}</li>
+    <li>{{user.name}}</li>
+      <li>{{user.profession}}</li>
+      <li *ngFor="let adress of user.adresses">
+        {{adress}}
+      </li>
+
+</ul> -->
+
+<table>
+   <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>email</th>
+   </tr>
+   <!-- @for(emp of employees;track emp.id){
+   <tr >
+     <td>{{emp.id}}</td>
+     <td>{{emp.name}}</td>
+     <td>{{emp.age}}</td>
+     <td>{{emp.email}}</td>
+
+   </tr>
+  } -->
+
+     @for(emp of employees;track emp.id){
+   <tr >
+    @if(emp.age>24){ 
+     <td>{{emp.id}}</td>
+     <td>{{emp.name}}</td>
+     <td>{{emp.age}}</td>
+     <td>{{emp.email}}</td>
+   }
+   </tr>
+  }
+</table>
+
+
+<app-tanu></app-tanu>
+<app-rohit></app-rohit>

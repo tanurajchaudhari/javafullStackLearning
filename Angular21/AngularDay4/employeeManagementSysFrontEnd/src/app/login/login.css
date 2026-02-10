@@ -1,0 +1,72 @@
+/* Container Heading */
+.login-container {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Login Card */
+form {
+  width: 420px;
+  margin: 25px auto;
+  padding: 25px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+/* Label */
+label {
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #1a73e8;
+}
+
+/* Submit Button */
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #1a73e8;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #0f5bcc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form {
+    width: 90%;
+  }
+}

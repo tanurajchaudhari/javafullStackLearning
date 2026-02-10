@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h3 style="text-align: center">All Employees</h3>
+    <table class="emp-table" frame="box" rules="all">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Address</th>
+        <th>Salary</th>
+        <th>Department</th>
+        <th>Gender</th>
+        <th>Action</th>
+      </tr>
+      @for(emp of employees;track emp.id){
+      <tr>
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.password }}</td>
+        <td>{{ emp.address }}</td>
+        <td>{{ emp.salary }}</td>
+        <td>{{ emp.dep }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>
+          <a class="btn btn-info me-2 " (click)="edit(emp.id)">Edit</a>
+          <a class="btn btn-danger" (click)="delete(emp.id)">Delete</a>
+        </td>
+      </tr>
+      }
+    </table>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!-- Navbar -->
+
+<div class="popup" *ngIf="showPopup">
+  <h4>✅ Employee register successfully ...</h4>
+</div>
+<!-- Form Container -->
+<div class="form-card">
+  <h2>Employee Registration</h2>
+
+  <form #data="ngForm" (ngSubmit)="register(data.value)">
+    <label>Enter Name</label>
+    <input
+      type="text"
+      name="name"
+      ngModel
+      #name="ngModel"
+      required
+      minlength="5"
+      maxlength="20"
+      placeholder="Enter your name"
+      ngModel
+    />
+    <span class="error" *ngIf="name.invalid && name.touched">
+      Name must be between 5 and 20 characters
+    </span>
+    <span class="error" *ngIf="serverError.name">
+      {{ serverError.name }}
+    </span>
+
+    <label>Enter Email</label>
+    <input
+      type="email"
+      name="email"
+      ngModel
+      #email="ngModel"
+      required
+      email
+      placeholder="Enter your email"
+      ngModel
+    />
+    <span class="error" *ngIf="email.invalid && email.touched"> Enter valid email </span>
+
+    <span class="error" *ngIf="serverError.email">
+      {{ serverError.email }}
+    </span>
+
+    <label>Enter Password</label>
+    <input
+      type="password"
+      name="password"
+      ngModel
+      #password="ngModel"
+      required
+      pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!._-]).{8,}$"
+      placeholder="Enter your password"
+      ngModel
+    />
+    <span class="error" *ngIf="password.invalid && password.touched">
+      Must contain uppercase, lowercase, digit & special character (min 8)
+    </span>
+    <span class="error" *ngIf="serverError.password">
+      {{ serverError.password }}
+    </span>
+
+    <label>Choose Address</label>
+    <select name="address" ngModel #address="ngModel" required>
+      <option value="Pune">Pune</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Mumbai">Mumbai</option>
+    </select>
+    <span class="error" *ngIf="address.invalid && address.touched"> Address is required </span>
+    <span class="error" *ngIf="serverError.address">
+      {{ serverError.address }}
+    </span>
+
+    <label>Enter Salary</label>
+    <input
+      type="number"
+      name="salary"
+      ngModel
+      #salary="ngModel"
+      required
+      min="1"
+      placeholder="Enter salary"
+      ngModel
+    />
+    <span class="error" *ngIf="salary.invalid && salary.touched"> Salary must be positive </span>
+    <span class="error" *ngIf="serverError.salary">
+      {{ serverError.salary }}
+    </span>
+
+    <label>Choose Department</label>
+    <select name="dep" ngModel #dep="ngModel" required>
+      <option value="IT">IT</option>
+      <option value="CS">CS</option>
+      <option value="FINANCE">FINANCE</option>
+      <option value="TESTING">TESTING</option>
+    </select>
+    <span class="error" *ngIf="dep.invalid && dep.touched"> Department is required </span>
+    <span class="error" *ngIf="serverError.dep">
+      {{ serverError.dep }}
+    </span>
+
+    <label>Gender</label>
+    <div class="radio-group">
+      <label
+        ><input type="radio" name="gender" value="Male" ngModel #gender="ngModel" required />
+        Male</label
+      >
+      <label><input type="radio" name="gender" value="Female" ngModel /> Female</label>
+    </div>
+    <span class="error" *ngIf="serverError.gender">
+      {{ serverError.gender }}
+    </span>
+    <button type="submit" class="btn-submit">Register</button>
+  </form>
+</div>

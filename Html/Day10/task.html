@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+           width: 500px;
+            height: 300px;
+            border: 2px solid black;
+            text-align: center;
+            margin: 100px auto;
+            padding: 20px;
+
+        }
+    </style>
+    <script>
+        function showPassword(){
+           
+             var inputRef=document.getElementById("input");
+             var btnRef=document.getElementById("btn");
+             if(inputRef.type=="password"){
+                   inputRef.type="text";
+                    var btnRef=document.getElementById("btn");
+                   btnRef.innerText="Hde Password";
+
+
+             }else{
+                inputRef.type="password";
+                 var btnRef=document.getElementById("btn");
+                btnRef.innerText="Show Password";
+
+             }
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+
+         <input id="input"type="password">
+         <button id="btn" onclick="showPassword()">shaow Password</button>
+    </div>
+</body>
+</html>

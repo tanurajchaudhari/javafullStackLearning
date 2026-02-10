@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function changeText(){
+            var h2Ref=document.getElementById("h2")
+            h2Ref.innerText="change in the text by id";
+            h2Ref.style.color="REd";
+            h2Ref.style.fontSize="50px";
+            h2Ref.style.backgroundColor="Yellow";
+            h2Ref.style.textAlign="Center";
+            h2Ref.style.border="2px solid black";
+        }
+
+   function changeImage(){
+              var imgRef=document.getElementById("img");
+              imgRef.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_VpFvqKHEZnk9PmBZV7vNNKVekqkk_M63zw&s";
+              changeText();
+   }
+
+    </script>
+
+
+
+</head>
+<body>
+    <h2 id ="h2">Weolcome to Dom.... concept</h2>
+
+      <img 
+       id="img",
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNjEwlT5uE-ie6f7m8d0p0iaejQoHVCwqBlA&s" alt="">
+      <br>
+
+    <button onclick="changeText()">change the text</button>
+    <button onclick="changeImage()">change the image</button>
+</body>
+</html>

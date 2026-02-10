@@ -1,0 +1,60 @@
+<h2>reactive form is here</h2>
+<br><br>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <div>
+  <label>Enter your Name :</label>
+  <br><br>
+  <input type="text" formControlName="name"  placeholder="Enter your name">
+<br><br>
+  <p *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+     style="color: red;">
+     Name is required
+  </p>
+</div>
+
+    <div>
+  <label>Enter your email :</label>
+  <br><br>
+  <input type="email" formControlName="email"  placeholder="Enter your email">
+<br><br>
+  <p *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+     style="color: red;">
+     Email is required
+  </p>
+</div>
+
+    <div>
+  <label>Enter your password   :   </label>
+  <br><br>
+  <input type="password" formControlName="password"  placeholder="Enter your password">
+<br><br>
+  <p *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+     style="color: red;">
+     Password is required
+  </p>
+</div>
+
+    <!-- <div>
+  <label>Enter your gender :</label>
+  <br><br>
+  <input type="text" formControlName="name"  placeholder="Enter your name">
+<br><br>
+  <p *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+     style="color: red;">
+     Name is required
+  </p>
+</div> -->
+
+    <div>
+  <label>Enter your Mobile number  :  </label>
+  <br><br>
+  <input type="number" formControlName="MobileNo"  placeholder="Enter your mobile number">
+<br><br>
+  <p *ngIf="registerForm.get('MobileNo')?.invalid && registerForm.get('MobileNo')?.touched"
+     style="color: red;">
+     mbile number is required
+  </p>
+</div>
+  <input type="submit" value="Register">
+</form>

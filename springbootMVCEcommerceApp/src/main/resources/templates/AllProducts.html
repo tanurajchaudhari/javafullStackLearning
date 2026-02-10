@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>All Products</title>
+
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 80%;
+        margin: 50px auto;
+        background: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 25px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 17px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    th {
+        background: #4CAF50;
+        color: white;
+        padding: 12px;
+        text-align: left;
+    }
+
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:nth-child(even) {
+        background: #f9f9f9;
+    }
+
+    tr:hover {
+        background: #eaf3ff;
+        transition: 0.3s;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 6px 14px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        margin-right: 8px;
+    }
+
+    .edit-btn {
+        background-color: #4CAF50; /* green */
+    }
+
+    .edit-btn:hover {
+        background-color: #43a047;
+    }
+
+    .delete-btn {
+        background-color: #f44336; /* red */
+    }
+
+    .delete-btn:hover {
+        background-color: #d32f2f;
+    }
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>All Products</h1>
+
+<table>
+
+    <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Quantity</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="product:${products}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.qyt}"></td>
+        <td>
+            <a th:href="@{/edit(id=${product.id})}" class="btn edit-btn">Edit</a>
+            <a th:href="@{/delete(id=${product.id})}" class="btn delete-btn">Delete</a>
+        </td>
+    </tr>
+
+</table>
+
+</div>
+
+</body>
+</html>
