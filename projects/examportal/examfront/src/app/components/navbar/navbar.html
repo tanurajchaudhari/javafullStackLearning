@@ -1,0 +1,65 @@
+<mat-toolbar color="accent">
+  <button
+  routerLink="/"
+  matIconButton class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu_book</mat-icon>
+  </button>
+  <span>Examportal</span>
+  <span class="example-spacer"></span>
+  <a 
+  *ngIf="!isLoggedIn"
+  [routerLink]="'/login'"
+   mat-button
+   class="example-icon favorite-icon ml20" 
+   aria-label="Example icon-button with heart icon">
+    
+     login
+  </a>
+
+   <a
+   *ngIf="!isLoggedIn"
+   [routerLink]="'/signup'"
+   mat-button 
+   class="example-icon favorite-icon mr20 "
+    aria-label="Example icon-button with heart icon">
+    
+     register
+  </a>
+
+   <a
+   *ngIf="isLoggedIn"
+   
+   mat-button 
+   class="example-icon favorite-icon mr20 "
+    aria-label="Example icon-button with heart icon"
+    routerLink="/admin/profile"
+    >
+    
+     {{login.getUser().username}}
+  </a>
+
+   <a
+   *ngIf="login.isLoggedIn()"
+   (click)="logout()"
+   mat-button 
+   class="example-icon favorite-icon mr20 "
+    aria-label="Example icon-button with heart icon">
+    
+     LogOut
+  </a>
+  
+</mat-toolbar>
+
+<!-- 
+<mat-toolbar color="accent">
+  <button mat-icon-button aria-label="Menu">
+    <mat-icon>menu_book</mat-icon>
+  </button>
+
+  <span>Examportal</span>
+
+  <span class="example-spacer"></span>
+
+  <button mat-button class="ml20">Login</button>
+  <button mat-button class="ml20">Register</button>
+</mat-toolbar> -->

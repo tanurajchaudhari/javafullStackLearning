@@ -1,0 +1,56 @@
+<mat-card *ngIf="user">
+  <h3>welcome to card component</h3>
+  <!-- {{user | json}} -->
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="container text-center">
+          <img
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAnAMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAABgMEBQECB//EADYQAAICAQIBCAcIAwEAAAAAAAABAgMEBRFREhMhMUFhcaFScoGRksHRBhUiIzVCYrEzU+EU/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD9wAAAAAAAAAMWTkVYtTtulyYrzfADKCay9byLW1Quahx65M0ZZmVLrybvjYFmCQq1LMqknHIm+6b5S8ztabrFeTJVXpV2vq4S+gHVAAAAAAAAAAAAAAAAAADxJPVs15mU2m+bh0QXzKHVrXTp984vZ8nZe3o+ZIAAAVALoe67HuABVaLmPKxdpv8ANr6Jd67GdAl9AtdeoKG/4bItP+yoIoAAAAAAAAAAAAAAADmfaHf7ufrxJgrtXqd2n3RS3aXKXs6SRAAAqAAA29K/Ucd/zK8ltBq5zUYy/bWm2/L5lSRQAAAAAAAAAAAAAAABrdbPqJDU8N4eVKGz5EnyoPu4FeYMvFqy6XVdHddjXWn3ARgOll6NlUSbrjz0Oxx6/caMqbYvaVVkX3waKjGDYpwsq6W1dFni47LzO1pmjKiatympzXSorqX1YVl0PDeNjOdi2st2bXBdiOmAQAAAAAAAAAAAAAAHzZONcJTskoxj1t9hws7XZtuGGkl6cl0vwQHcstrqjyrZxhHjJ7GpZq+DB7c9yvVi35krZZZbLl2zlOXFs+QKj77wuNnwHn33hLts+EmABULW8J9tnwCOt4TeznNeMWS/SeAWVOoYlz2rvg3wb2fmbO5C7s2sTUcrFf5djcV+yXSgLAHP0/VacxqD/Lt9F9vgdAAAAAAAAAAeTkoRcpPaKW7fA9OV9or3Xhxri9ucls/BAcjVNQnm27RbVMX+GPHvZogFQAAAAAAAAAAHqbTTT270Umi6i8qHM3f5orr9JfUmjNiXOjKqtX7ZL3dpFWgPE9+k9AAAAAABO/aWzfKqh6MN/e/+FES2vS5Wpz/jGK8gOcACoAAAAAAAAAAAAALTDnzuJRY+uVcW/cZjS0aXK0yjuW3mbpFAAAAAAlNb/UrfZ/SKs4P2hw5uxZVceVHbae3Z3gcMAFQAAAAAAAAAAAA+6q53WRrri5Sk9kkBUaJ+mU79/wDZvmHEp/8APjVU7puEUn8zMRQAAAAAAAHKzNFovbnS+Zm+C/C/YcjI0nMob/LdkfSh0+RWACGlFxe0k4vg1szwt7KoWLayEZLhJbmtZpeFPrx4r1d0BIgp5aFhvq52PhP6nw9Axv8Abd719ComwUa0DG/23e9fQ+46FhrrdsvGX0AmT6hCVkuTCLlLgluVlel4VfVRF+s2zahXCtcmEIxXCK2IqZxdFyrtnYlTDjLr9x3cLAow4tVreb65y6WzbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/2Q=="
+            alt=""
+            class="profile-image"
+          />
+          <h1 *ngIf="user.firstName || user.lastName">{{user.firstName}} {{user.lastName}}</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <!-- table details -->
+            <table class="table text-center mt20">
+              <tr *ngIf="user.username">
+                <td>Username</td>
+                <td>{{user.username}}</td>
+              </tr>
+              <tr *ngIf="user.id">
+                <td>UserId</td>
+                <td>{{user.id}}</td>
+              </tr>
+              <tr *ngIf="user.phone">
+                <td>Phone</td>
+                <td>{{user.phone}}</td>
+              </tr>
+              <tr >
+                <td>Role</td>
+                <td>{{user.authorities[0].authority}}</td>
+              </tr>
+              <tr *ngIf="user.enable">
+                <td>Status</td>
+                <td>{{user.enable?"ACTIVE":"NOT ACTIVE"}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <!-- <mat-card-actions  >
+    <button matButton>LIKE</button>
+    <button matButton>SHARE</button>
+  </mat-card-actions> -->
+<mat-card-actions class="actions-center">
+  <button mat-raised-button color="primary" class="mr20">UPDATE</button>
+  <button mat-raised-button color="accent" class="ml20">SHARE</button>
+</mat-card-actions>
+
+
+
+</mat-card>

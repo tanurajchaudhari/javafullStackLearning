@@ -14,7 +14,7 @@ import com.tanuraj.repo.UserRepository;
 @Service
 public class CustomUserDetailsService implements UserDetailsService{
 
-	@Autowired
+	@Autowired        
 	UserRepository repository;
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -26,7 +26,7 @@ public class CustomUserDetailsService implements UserDetailsService{
 					.withUsername(user.getUsername())
 					.password(user.getPassword())
 					.roles(user.getRole())
-					.build();
+				       	.build();
 		}
 		throw new UsernameNotFoundException("User not found with username :- "+ username);
 	}
