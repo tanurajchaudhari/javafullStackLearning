@@ -29,13 +29,10 @@ export class Login {
   constructor(private snack:MatSnackBar,private login:LoginService,private router:Router){
 
   }
-
   loginData={
     username:'',
     password:'',
   }
-
-
   formSubmit(){
     console.log("login button clicked ")
     //for username check
@@ -45,16 +42,13 @@ export class Login {
               });
               return;
     }
-
     //for password check
-
     if (this.loginData.password.trim()=='' || this.loginData.password==null){
               this.snack.open('password is required !!','',{
                 duration:3000,
               });
               return;
     }
-
     //request to server to generate token
   this.login.generateToken(this.loginData).subscribe(
     (data:any)=>{
@@ -77,7 +71,7 @@ export class Login {
         }else if(this.login.getUserRole()=="Normal"){
           //user-dashboard
           // window.location.href="/user";
-          this.router.navigate(['user'])
+          this.router.navigate(['user/0'])
           this.login.loginStatusSubject.next(true);
 
         }else{
@@ -85,7 +79,6 @@ export class Login {
         }
 
       });
-
     },
     (error:any)=>{
       console.log("Error !!!");
@@ -94,8 +87,6 @@ export class Login {
         duration:3000,
       })
     }
-  )
-    
+  ) 
   }
-
 }

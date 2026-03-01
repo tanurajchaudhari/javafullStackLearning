@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import{MatButtonModule}from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
+
 import { Navbar } from './components/navbar/navbar';
 import { Material_Imports } from './importMaterial';
-import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
+import {  MatToolbarModule } from '@angular/material/toolbar';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 // import {MatInputModule} from '@angular/material/input';
 // import {MatFormFieldModule} from '@angular/material/form-field';
 
@@ -18,6 +19,7 @@ import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
     // MatFormFieldModule,
     // MatCardModule,
     Navbar,MatToolbarModule,
+    NgxUiLoaderModule,
     
 
   ],

@@ -64,4 +64,6 @@ app-root {
 .mat-mdc-list-item:focus-visible {
   outline: none !important;
 }
-
+.text-center{
+  
+}

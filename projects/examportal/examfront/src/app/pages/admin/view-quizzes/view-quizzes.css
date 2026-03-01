@@ -1,0 +1,11 @@
+.example-header-image {
+  background-image: url("../../../../assets/score.png");
+  background-size: cover;
+}
+.active-card {
+  background-color: rgba(0, 128, 0, 0.15); /* transparent green */
+  border-left: 5px solid green;
+}
+
+
+ 

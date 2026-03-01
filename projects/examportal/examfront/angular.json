@@ -27,7 +27,10 @@
             "styles": [
               "src/material-theme.scss",
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "ckeditor5/ckeditor5.css"
+
+
               
             ]
           },
