@@ -2,6 +2,7 @@ package com.exam.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import com.exam.service.CategoryService;
 
 @RestController
 @RequestMapping("/category")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CategoryController {
 
 	@Autowired
@@ -37,6 +39,7 @@ public class CategoryController {
 	// get all categories
 	@GetMapping("/")
 	public ResponseEntity<?> getCategories(){
+		System.err.println("get all categories... ");
 		return ResponseEntity.ok(categoryService.getCategories());
 	}
 	

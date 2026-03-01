@@ -66,7 +66,7 @@ public class JwtUtil  {
                 .claims(claims)                 // ✅ add custom claims
                 .subject(subject)               // ✅ use subject param
                 .issuedAt(new Date())            // ✅ token issue time
-                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60)) // 1 minute
+                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24)) // 1 minute
                 .signWith(getSigningKey())       // ✅ HS256 automatically
                 .compact();
     }

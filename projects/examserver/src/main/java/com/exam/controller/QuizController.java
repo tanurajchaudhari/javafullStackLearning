@@ -1,7 +1,10 @@
 package com.exam.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,12 +14,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.exam.entity.exam.Category;
 import com.exam.entity.exam.Quiz;
 import com.exam.service.QuizService;
 
 @RestController
 @RequestMapping("/quiz")
+@CrossOrigin(origins = "http://localhost:4200")
 public class QuizController {
+	
 	@Autowired
 	private QuizService quizService;
 	
@@ -47,6 +53,26 @@ public class QuizController {
 	@DeleteMapping("/{qid}")
 	public void delete(@PathVariable("qid") Long qid) {
 		quizService.deleteQuiz(qid);
+	}
+	//get quizzes of category
+	@GetMapping("/category/{cid}")
+	public List<Quiz> getQuizzesOfCategory(@PathVariable("cid")Long cid){
+		Category category = new Category();
+		category.setCid(cid);
+		return quizService.getQuizzesOfCategory(category);
+	}
+	
+	//get active quizzes
+	@GetMapping("/active")
+	public List<Quiz> getActiveQuizzes(){
+		return quizService.getActiveQuizzes();
+	}
+	//get Active quizzes of category
+	@GetMapping("/category/active/{cid}")
+	public List<Quiz> getActiveQuizzes(@PathVariable("cid")Long cid){
+		Category category = new Category();
+		category.setCid(cid);
+		return quizService.getActiveQuizzesOfCategory(category);
 	}
 	
 
