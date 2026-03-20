@@ -1,0 +1,26 @@
+package com.fitness.activityservice.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fitness.activityservice.dto.ActivityRequest;
+import com.fitness.activityservice.dto.ActivityResponse;
+import com.fitness.activityservice.service.ActivityService;
+
+@RestController
+@RequestMapping("/api/activities")
+public class ActivityController {
+
+	@Autowired
+	private ActivityService activityService;
+	
+	@PostMapping()
+	public ResponseEntity<ActivityResponse> trackActivity(@RequestBody ActivityRequest request){
+		System.err.println(" in activity controller");
+		return ResponseEntity.ok(activityService.trackActivity(request));
+	}
+}
