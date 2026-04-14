@@ -23,11 +23,13 @@ public class RecommendationController {
 	
 	@GetMapping("/user/{userId}")
 	public ResponseEntity<List<Recommendation>>  getUserRecommendation(@PathVariable String userId){
+		System.err.println("in  controller recommendation user id::"+ userId);
 		return ResponseEntity.ok(recommendationService.getUserRecommendation(userId));
 	}
 	
 	@GetMapping("/activity/{activityId}")
 	public ResponseEntity<Recommendation> getActivityRecommendation(@PathVariable String activityId){
+		System.err.println("in controller recommendation activityId"+ activityId);
 		return ResponseEntity.ok(recommendationService.getActivityRecommendation(activityId	));
 	}
 	

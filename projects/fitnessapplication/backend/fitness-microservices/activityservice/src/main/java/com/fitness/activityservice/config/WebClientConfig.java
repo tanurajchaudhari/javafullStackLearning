@@ -1,4 +1,4 @@
-package com.fitness.activityservice.config;
+	package com.fitness.activityservice.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,7 @@ public class WebClientConfig {
 
 	@Bean
 	public WebClient userServiceWebClient(WebClient.Builder webClientBuilder) {
-		return webClientBuilder.baseUrl("http://USERSERVICE")
+		return webClientBuilder.baseUrl("http://USER-SERVICE")
 				.build();
 	}
 }

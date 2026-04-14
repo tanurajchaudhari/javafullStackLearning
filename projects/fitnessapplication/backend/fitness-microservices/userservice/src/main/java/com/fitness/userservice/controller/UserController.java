@@ -28,6 +28,7 @@ public class UserController {
 	
 	@GetMapping("/{userId}") 
 	public  ResponseEntity<UserResponse>getUserProfile(@PathVariable("userId")String userId){
+		System.err.println("find user");
 		return ResponseEntity.ok(userService.getUserProfile(userId));
 	}
 	

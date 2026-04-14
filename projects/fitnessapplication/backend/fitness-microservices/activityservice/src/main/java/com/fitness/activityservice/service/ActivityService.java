@@ -1,5 +1,9 @@
 package com.fitness.activityservice.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.jspecify.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -58,5 +62,11 @@ public class ActivityService {
 		response.setUpdatedTime(activity.getUpdatedTime());
 		response.setCreatedTime(activity.getCreatedTime());
 		return response;
+	}
+	public List<ActivityResponse> getUserActivities(String userId) {
+		List<Activity>activityList= activityRepository.findByUserId(userId);
+		return activityList.stream()
+				.map(this ::mapToResponse)
+				.collect(Collectors.toList());
 	}
 }
